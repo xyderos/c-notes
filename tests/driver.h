@@ -1,17 +1,13 @@
 #include <check.h>
 
-START_TEST(TEST_MULTIPLICATION_SHOULD_BE_OKAY)
+#include "../src/bitfields.h"
+
+START_TEST(TEST_SETTING_BIT_IN_BITFIELDS_SHOULD_BE_OKAY)
 {
-	int result = multiplication(1, 2);
+	memory_address_info_t mem_info;
+	mem_info.data = 0x00;
+	write_engine_is_on(&mem_info);
 
-	ck_assert_int_eq(2, result);
-}
-END_TEST
-
-START_TEST(TEST_ADDITION_SHOULD_BE_OKAY)
-{
-	int result = addition(1, 1);
-
-	ck_assert_int_eq(2, result);
+	ck_assert_int_eq(1, mem_info.bits.engine_is_on);
 }
 END_TEST
