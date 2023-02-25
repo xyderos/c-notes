@@ -1,3 +1,3 @@
 #pragma once
 
-int multiplication(int, int);
+char **command_parser(char *command, const char *const delims);

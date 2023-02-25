@@ -1,17 +1,27 @@
 #include <check.h>
+#include <stdlib.h>
 
-START_TEST(TEST_MULTIPLICATION_SHOULD_BE_OKAY)
+#include "../src/strings.h"
+
+START_TEST(TEST_COMMAND_PARSER_SHOULD_BE_OKAY)
 {
-	int result = multiplication(1, 2);
+	const char *const input = "needle,in,the,haystack";
+	char **result = command_parser(input, ",");
 
-	ck_assert_int_eq(2, result);
-}
-END_TEST
+	int acc = 0;
+	for (char *c = *result; c; c = *++result) {
 
-START_TEST(TEST_ADDITION_SHOULD_BE_OKAY)
-{
-	int result = addition(1, 1);
+		if (acc == 0) {
+			ck_assert_str_eq(c, "needle");
+		} else if (acc == 1) {
+			ck_assert_str_eq(c, "in");
+		} else if (acc == 2) {
+			ck_assert_str_eq(c, "the");
+		} else {
+			ck_assert_str_eq(c, "haystack");
+		}
+	}
 
-	ck_assert_int_eq(2, result);
+	free(result);
 }
 END_TEST
