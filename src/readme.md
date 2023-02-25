@@ -52,4 +52,30 @@
 
 ### __Searching__
 
+### __strchr__
+* #### returns a pointer to the first occurence, no need to allocate memory, unless you want to modify that
+
+### __strstr__
+* #### Try finding an occurence within a string, can iterate the same way as strchr as in the example
+
+### __strpbrk__
+* #### Find first offurence from the first char of the first argument in the second argument
+
 ### __Comparing__
+
+### __strcmp__
+* #### returns 0 if equal, >0 if for the first occurence of different character there is a higher ASCII value else <0
+
+### __strncmp__
+* #### same as strcmp but you define the number of characters you want to compare
+
+### __String to numeric__
+
+* #### __Do not use ato*, they are error prone__ 
+
+### __strto*__
+* #### Try parsing into the desired result, obtain error codes also
+
+
+### A general rule of thumb
+ * ### __If you want to manipulate any kind string, from a pointer in order to keep it as general as possible (cover both char* and char[]), allocate it to the heap__
