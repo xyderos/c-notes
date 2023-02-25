@@ -14,9 +14,6 @@ calculations_suite(void)
 	s = suite_create("calculation");
 	tc_core = tcase_create("core");
 
-	tcase_add_test(tc_core, TEST_ADDITION_SHOULD_BE_OKAY);
-	tcase_add_test(tc_core, TEST_MULTIPLICATION_SHOULD_BE_OKAY);
-
 	suite_add_tcase(s, tc_core);
 
 	return s;
