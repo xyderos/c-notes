@@ -1,17 +1,19 @@
 #include <check.h>
+#include <stdlib.h>
 
-START_TEST(TEST_MULTIPLICATION_SHOULD_BE_OKAY)
+#include "../src/streams.h"
+
+START_TEST(TEST_LS_SHOULD_BE_OKAY)
 {
-	int result = multiplication(1, 2);
 
-	ck_assert_int_eq(2, result);
-}
-END_TEST
+	char **logs = log_results_of_command("ls");
 
-START_TEST(TEST_ADDITION_SHOULD_BE_OKAY)
-{
-	int result = addition(1, 1);
+	for (char **log = logs; *log != NULL; log++) {
 
-	ck_assert_int_eq(2, result);
+		ck_assert_ptr_nonnull(log);
+		free(*log);
+	}
+
+	free(logs);
 }
 END_TEST
