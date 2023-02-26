@@ -1,4 +1,4 @@
-# Some general notes in C
+# Declaration and Definition
 
 ## __Declaration vs definition__
 
