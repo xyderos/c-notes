@@ -28,17 +28,17 @@
 
 3) __Just defined__
 
-* #### Case __1 and 2__ contains definitions that are called __string symbols__, meaning that they are stored in the __.data__ section of the program, whereas case __3__ stores them in the __.common section__
+* #### Case __1 and 2__ contains definitions that are called __strong symbols__, meaning that they are stored in the __.data__ section of the program, whereas case __3__ stores them in the __.common section__
 
 ### __Rule of three for global variables__
 
-1) __Only one string symbol is allowed with the same name__
+1) __Only one strong symbol is allowed with the same name__
 
-2) __If there is a string symbol and several weak symbols, the weak symbols are overrode by the strong symbol__
+2) __If there is a strong symbol and several weak symbols, the weak symbols are overrode by the strong symbol__
 
 3) __If there are several weak symbols, the compiler chooses the one with the largest memory occupation__
 
-### __Note that this is not the case in C++, everything global is considered a string symbol__
+### __Note that this is not the case in C++, everything global is considered a strong symbol__
 * ### A workaround is to declared each redefinition with the __weak attribute__
 
 ### __Good programming habits__
