@@ -6,7 +6,7 @@
 #include "driver.h"
 
 static Suite *
-calculations_suite(void)
+globals_suite(void)
 {
 	Suite *s = NULL;
 	TCase *tc_core = NULL;
@@ -14,8 +14,7 @@ calculations_suite(void)
 	s = suite_create("calculation");
 	tc_core = tcase_create("core");
 
-	tcase_add_test(tc_core, TEST_ADDITION_SHOULD_BE_OKAY);
-	tcase_add_test(tc_core, TEST_MULTIPLICATION_SHOULD_BE_OKAY);
+	tcase_add_test(tc_core, TEST_GLOBAL_VARIABLE_SHOULD_BE_OKAY);
 
 	suite_add_tcase(s, tc_core);
 
@@ -30,7 +29,7 @@ main(void)
 	Suite *s = NULL;
 	SRunner *runner = NULL;
 
-	s = calculations_suite();
+	s = globals_suite();
 	runner = srunner_create(s);
 
 	srunner_run_all(runner, CK_NORMAL);
