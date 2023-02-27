@@ -1,17 +1,14 @@
 #include <check.h>
+#include <stdlib.h>
 
-START_TEST(TEST_MULTIPLICATION_SHOULD_BE_OKAY)
+#include "../src/check_type.h"
+
+START_TEST(TEST_CHECKING_TYPE_SHOULD_BE_OKAY)
 {
-	int result = multiplication(1, 2);
+	char *result = check_if_a_number_is_const_int();
 
-	ck_assert_int_eq(2, result);
-}
-END_TEST
+	ck_assert_str_eq("a const int", result);
 
-START_TEST(TEST_ADDITION_SHOULD_BE_OKAY)
-{
-	int result = addition(1, 1);
-
-	ck_assert_int_eq(2, result);
+	free(result);
 }
 END_TEST
