@@ -1,17 +1,14 @@
 #include <check.h>
 
-START_TEST(TEST_MULTIPLICATION_SHOULD_BE_OKAY)
+#include "../src/assembly.h"
+
+START_TEST(TEST_SWAP_IN_ASSEMBLY_SHOULD_BE_OKAY)
 {
-	int result = multiplication(1, 2);
+	int n1 = 1, n2 = 2;
+	int *p1 = &n1, *p2 = &n2;
+	swap(p1, p2);
 
-	ck_assert_int_eq(2, result);
-}
-END_TEST
-
-START_TEST(TEST_ADDITION_SHOULD_BE_OKAY)
-{
-	int result = addition(1, 1);
-
-	ck_assert_int_eq(2, result);
+	ck_assert_int_eq(2, n1);
+	ck_assert_int_eq(1, n2);
 }
 END_TEST
