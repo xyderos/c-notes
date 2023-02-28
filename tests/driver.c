@@ -19,6 +19,7 @@ calculations_suite(void)
 	tcase_add_test(tc_core, TEST_SUMMATION_SHOULD_BE_OKAY);
 	tcase_add_test(tc_core, TEST_INTERNAL_INCREMENTATION_SHOULD_BE_OKAY);
 	tcase_add_test(tc_core, TEST_RETURN_EXTERN_SHOULD_BE_OKAY);
+	tcase_add_test(tc_core, TEST_INLINE_AND_EXTERN_FUNCTION_SHOULD_BE_OKAY);
 
 	suite_add_tcase(s, tc_core);
 

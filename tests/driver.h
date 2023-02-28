@@ -2,6 +2,7 @@
 #include <stdint.h>
 
 #include "../src/effective_types/types.h"
+#include "../src/storage_classes/five.h"
 #include "../src/storage_classes/storage_classes.h"
 
 START_TEST(TEST_CHANGING_BYTES_SHOULD_BE_OKAY)
@@ -40,5 +41,13 @@ START_TEST(TEST_RETURN_EXTERN_SHOULD_BE_OKAY)
 	int result = return_extern();
 
 	ck_assert_int_eq(result, 5);
+}
+END_TEST
+
+START_TEST(TEST_INLINE_AND_EXTERN_FUNCTION_SHOULD_BE_OKAY)
+{
+	int result = plus_two_wrapper(2);
+
+	ck_assert_int_eq(result, 4);
 }
 END_TEST
