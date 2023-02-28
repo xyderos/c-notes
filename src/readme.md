@@ -43,3 +43,15 @@
 * ## Use function pointers as members, gives the feeling of calling methods
 
 * ### Still needs to pass the struct as an argument
+
+## __Padding and packing__
+
+* ### Most compilers want to access stuff fast, without having memory misses
+
+* ### This happends with alignment by either __padding__ or __packing__
+
+* ### Using the __packed__ atribute, the compiler will not add padding based on your machines alignment
+
+* ### Save space and make it architectire independent, there will not be any extra padding due to each nodes requirements in a network
+
+* ### In general, padding works based on the first element, take the first variable and the atual struct with the padding will be a __multiple of the size in bytes of the first element__
