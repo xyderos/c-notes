@@ -17,7 +17,7 @@ START_TEST(TEST_ALLOCATING_SAMPLE_SHOULD_BE_OKAY)
 	// verify that this causes internal damage by checking the output from
 	// valgrind ck_assert_int_ne(s1.flex[1], s2->flex[1]);
 
-	free(s2->flex);
+	// free(s2->flex);
 	free(s2);
 }
 END_TEST
@@ -35,7 +35,7 @@ START_TEST(TEST_ALLOCATING_ANOTHER_SAMPLE_SHOULD_BE_OKAY)
 	// verify that this causes internal damage by checking the output from
 	// valgrind ck_assert_int_ne(s1.flex[1], s2->flex[1]);
 
-	free(s2->flex);
+	// free(s2->flex);
 	free(s2);
 }
 END_TEST
