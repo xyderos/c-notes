@@ -1,6 +1,6 @@
 #include <check.h>
 
-#include "../src/globals.h"
+#include "../src/globals/globals.h"
 
 START_TEST(TEST_GLOBAL_VARIABLE_SHOULD_BE_OKAY)
 {
