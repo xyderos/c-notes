@@ -29,3 +29,13 @@
 ## How to use
 
 * Since declarations show __usage__, this also means that you can also see the __order of operations that can be applied to the declaration to extract the first operator by simply applying all the operations__
+
+## __Volatile__
+
+* Instructs the compiler that the value of a variable will change due to __external events and not due to the program flow__ and thus the compiler will assume any optimizations
+
+This is super useful when:
+
+1) You want interface with hardware that has memory-mapped I/O registers
+2) When using variables that are modified outside the program control flow eg Interrupt Service Routine
+3) Interfacing with threads

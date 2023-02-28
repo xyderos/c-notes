@@ -54,3 +54,13 @@
 
 * Using plain __int__, __long__ etc are platform defined from the compiler
 * Prefer using the __stdint.h__ to obtain numbers __with specific bit length__ as well as __2s complement representation__
+
+## Implicit and explicit conversions
+
+* When converting a value of an integer type to another integer type, __if the value can be represented from the new type, it will be unchanged__
+
+* If doing the opposite, the behavior is __implementation defined__ and thus not portable
+
+### Pointer comversions to function calls
+
+* Everything to __void*__ is implicit, but any other conversion must be __explicit__, accessing an object from a different type is __undefined behavior__ (__unless its a character type__)
