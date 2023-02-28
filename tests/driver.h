@@ -47,7 +47,6 @@ START_TEST(TEST_SHALLOW_COPY_SHOULD_BE_OKAY)
 
 	ck_assert_int_eq(p2->x, p1->x);
 
-	free(p1);
 	free(p2);
 }
 END_TEST
