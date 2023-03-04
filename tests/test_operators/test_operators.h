@@ -1,3 +1,5 @@
+#pragma once
+
 #include <check.h>
 #include <stdlib.h>
 
