@@ -47,8 +47,8 @@ shift_right(unsigned int n1, unsigned int n2)
 
 unsigned char *bit_pattern(unsigned int n) {
   unsigned char *result = NULL;
-  unsigned int i = 0, x = 0, word = 0;
-  unsigned mask = 1;
+  unsigned char i = 0, x = 0, word = 0;
+  unsigned int mask = 1;
   word = CHAR_BIT * sizeof(int);
   result = malloc(word + 1);
   mask = mask << (word - 1);
