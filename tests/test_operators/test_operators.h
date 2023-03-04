@@ -64,9 +64,9 @@ END_TEST
 
 START_TEST(TEST_IS_OPTIMIZED_SHOULD_BE_OKAY)
 {
-	char *pattern = bit_pattern(36);
+	unsigned char *pattern = bit_pattern(36);
 
-	char *expected = "00000000000000000000000000100100";
+	unsigned char *expected = (unsigned char*)"00000000000000000000000000100100";
 	ck_assert_str_eq(pattern, expected);
 
 	free(pattern);
@@ -77,7 +77,7 @@ START_TEST(TEST_BIT_PATTERN_SHOULD_BE_OKAY)
 {
 	unsigned char *pattern = bit_pattern(36);
 
-	unsigned char *expected = "00000000000000000000000000100100";
+	unsigned char *expected = (unsigned char*)"00000000000000000000000000100100";
 	ck_assert_str_eq(pattern, expected);
 
 	free(pattern);
