@@ -24,9 +24,9 @@ main(void)
 	srunner_add_suite(runner, bit_operations_suite());
 	srunner_add_suite(runner, bitfields_suite());
 
-	srunner_run_all(runner, CK_NORMAL);
-	no_failed = srunner_ntests_failed(runner);
-	srunner_free(runner);
+    srunner_run_all(runner, CK_NORMAL);
+    no_failed = srunner_ntests_failed(runner);
+    srunner_free(runner);
 
-	return (no_failed == 0) ? EXIT_SUCCESS : EXIT_FAILURE;
+    return (no_failed == 0) ? EXIT_SUCCESS : EXIT_FAILURE;
 }
