@@ -18,7 +18,7 @@ unsigned int shift_right(unsigned int n1, unsigned int n2);
 
 unsigned int is_odd_optimized(unsigned int n);
 
-char *bit_pattern(unsigned int n);
+unsigned char *bit_pattern(unsigned int n);
 
 unsigned int extract_byte(unsigned int number, unsigned int byte);
 

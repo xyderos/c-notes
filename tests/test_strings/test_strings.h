@@ -10,13 +10,14 @@ START_TEST(TEST_COMMAND_PARSER_WITH_STRTOK_SHOULD_BE_OKAY)
 
 	char *original_command_from_pointer = "a couple of commands";
 
+	unsigned int acc = 0;
+
 	char *copied_string = strdup(original_command_from_pointer);
 
 	char **entries = command_parser_with_strtok(copied_string, " ");
 
 	free(copied_string);
 
-	unsigned int acc = 0;
 	for (char **entry = entries; *entry != NULL; entry++) {
 
 		if (acc == 0) {
@@ -42,6 +43,8 @@ START_TEST(TEST_COMMAND_PARSER_WITH_STRTOK_R_SHOULD_BE_OKAY)
 {
 
 	char *original_command_from_pointer = "a couple of commands";
+	
+	unsigned int acc = 0;
 
 	char *copied_string = strdup(original_command_from_pointer);
 
@@ -49,7 +52,6 @@ START_TEST(TEST_COMMAND_PARSER_WITH_STRTOK_R_SHOULD_BE_OKAY)
 
 	free(copied_string);
 
-	unsigned int acc = 0;
 	for (char **entry = entries; *entry != NULL; entry++) {
 
 		if (acc == 0) {

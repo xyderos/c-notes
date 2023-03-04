@@ -8,11 +8,11 @@ Suite *structs_suite(void);
 
 START_TEST(TEST_ALLOCATING_SAMPLE_SHOULD_BE_OKAY)
 {
-	sample_t s1;
+	sample_t s1, *s2 = NULL;
 
 	s1.flex[1] = 5;
 
-	sample_t *s2 = allocate_sample_struct();
+	s2 = allocate_sample_struct();
 
 	s2->flex[1] = 5;
 	// this causes undefined behaviour on x86-64 linux
@@ -26,11 +26,11 @@ END_TEST
 
 START_TEST(TEST_ALLOCATING_ANOTHER_SAMPLE_SHOULD_BE_OKAY)
 {
-	another_sample_t s1 = { 2 };
+	another_sample_t s1 = { 2 }, *s2 = NULL;
 
 	s1.flex[1] = 5;
 
-	another_sample_t *s2 = allocate_another_sample_struct();
+	s2 = allocate_another_sample_struct();
 
 	s2->flex[1] = 5;
 	// this causes undefined behaviour on x86-64 linux

@@ -45,23 +45,21 @@ shift_right(unsigned int n1, unsigned int n2)
 	return n1 >> n2;
 }
 
-char *
-bit_pattern(unsigned int n)
-{
-	unsigned char *result = NULL;
-	unsigned int i = 0, x = 0, word = 0;
-	unsigned mask = 1;
-	word = CHAR_BIT * sizeof(int);
-	result = malloc(word + 1);
-	mask = mask << (word - 1);
-	// shift
-	for (i = 1; i <= word; i++) {
-		x = (n & mask) ? 1 : 0; // identify
-		result[i - 1] = '0' + x;
-		mask >>= 1UL; // shift mask to the right by 1 bit
-	}
+unsigned char *bit_pattern(unsigned int n) {
+  unsigned char *result = NULL;
+  unsigned int i = 0, x = 0, word = 0;
+  unsigned mask = 1;
+  word = CHAR_BIT * sizeof(int);
+  result = malloc(word + 1);
+  mask = mask << (word - 1);
+  // shift
+  for (i = 1; i <= word; i++) {
+    x = (n & mask) ? 1 : 0;  // identify
+    result[i - 1] = '0' + x;
+    mask >>= 1UL;  // shift mask to the right by 1 bit
+  }
 
-	return result;
+  return result;
 }
 
 unsigned int
