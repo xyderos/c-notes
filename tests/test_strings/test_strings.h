@@ -43,7 +43,7 @@ START_TEST(TEST_COMMAND_PARSER_WITH_STRTOK_R_SHOULD_BE_OKAY)
 {
 
 	char *original_command_from_pointer = "a couple of commands";
-	
+
 	unsigned int acc = 0;
 
 	char *copied_string = strdup(original_command_from_pointer);
