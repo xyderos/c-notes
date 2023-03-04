@@ -1,9 +1,9 @@
 #include <check.h>
-<<<<<<< HEAD
-=======
 #include <stdlib.h>
 
-#include "../src/check_type.h"
+#include "../../src/macros/check_type.h"
+
+Suite *macros_suite(void);
 
 START_TEST(TEST_CHECKING_TYPE_SHOULD_BE_OKAY)
 {
@@ -14,4 +14,3 @@ START_TEST(TEST_CHECKING_TYPE_SHOULD_BE_OKAY)
 	free(result);
 }
 END_TEST
->>>>>>> a_few_notes_on_macros

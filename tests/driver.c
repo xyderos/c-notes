@@ -10,6 +10,7 @@
 #include "test_strings/test_strings.h"
 #include "test_structs/test_structs.h"
 #include "test_streams/test_streams.h"
+#include "test_macros/test_macros.h"
 
 int main(void) {
   int no_failed = 0;
@@ -20,6 +21,7 @@ int main(void) {
   srunner_add_suite(runner, bit_operations_suite());
   srunner_add_suite(runner, bitfields_suite());
   srunner_add_suite(runner, streams_suite());
+  srunner_add_suite(runner, macros_suite());
 
   srunner_run_all(runner, CK_NORMAL);
   no_failed = srunner_ntests_failed(runner);
