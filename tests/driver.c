@@ -10,6 +10,7 @@
 #include "test_strings/test_strings.h"
 #include "test_structs/test_structs.h"
 #include "test_operators/test_operators.h"
+#include "test_bitfields/test_bitfields.h"
 
 int
 main(void)
@@ -21,6 +22,7 @@ main(void)
 	runner = srunner_create(strings_suite());
 	srunner_add_suite(runner, structs_suite());
 	srunner_add_suite(runner, bit_operations_suite());
+	srunner_add_suite(runner, bitfields_suite());
 
 	srunner_run_all(runner, CK_NORMAL);
 	no_failed = srunner_ntests_failed(runner);
