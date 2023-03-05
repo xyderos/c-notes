@@ -2,6 +2,7 @@
 
 #include "pointers.h"
 
+point_t *global_point = NULL;
 point_t *
 deep_copy(const point_t *const p)
 {
