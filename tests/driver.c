@@ -7,6 +7,7 @@
 
 #include "test_assembly/test_assembly.h"
 #include "test_bitfields/test_bitfields.h"
+#include "test_declarations/test_declarations.h"
 #include "test_macros/test_macros.h"
 #include "test_memory/test_memory.h"
 #include "test_operators/test_operators.h"
@@ -30,6 +31,7 @@ main(void)
 	srunner_add_suite(runner, assembly_suite());
 	srunner_add_suite(runner, pointers_suite());
 	srunner_add_suite(runner, memory_suite());
+	srunner_add_suite(runner, globals_suite());
 
 	srunner_run_all(runner, CK_NORMAL);
 	no_failed = srunner_ntests_failed(runner);
