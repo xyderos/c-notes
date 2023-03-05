@@ -3,23 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "driver.h"
-
-static Suite *
-globals_suite(void)
-{
-	Suite *s = NULL;
-	TCase *tc_core = NULL;
-
-	s = suite_create("calculation");
-	tc_core = tcase_create("core");
-
-	tcase_add_test(tc_core, TEST_GLOBAL_VARIABLE_SHOULD_BE_OKAY);
-
-	suite_add_tcase(s, tc_core);
-
-	return s;
-}
+#include "test_declarations/test_declarations.h"
 
 int
 main(void)
@@ -30,9 +14,9 @@ main(void)
 	SRunner *runner = NULL;
 
 	s = globals_suite();
-	runner = srunner_create(s);
+        runner = srunner_create(globals_suite());
 
-	srunner_run_all(runner, CK_NORMAL);
+        srunner_run_all(runner, CK_NORMAL);
 	no_failed = srunner_ntests_failed(runner);
 	srunner_free(runner);
 
