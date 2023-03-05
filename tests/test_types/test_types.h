@@ -1,11 +1,11 @@
-<<<<<<< HEAD
-=======
 #include <check.h>
 #include <stdint.h>
 
-#include "../src/effective_types/types.h"
-#include "../src/storage_classes/five.h"
-#include "../src/storage_classes/storage_classes.h"
+#include "../../src/types/effective_types/types.h"
+#include "../../src/types/storage_classes/five.h"
+#include "../../src/types/storage_classes/storage_classes.h"
+
+Suite *types_suite(void);
 
 START_TEST(TEST_CHANGING_BYTES_SHOULD_BE_OKAY)
 {
@@ -53,4 +53,3 @@ START_TEST(TEST_INLINE_AND_EXTERN_FUNCTION_SHOULD_BE_OKAY)
 	ck_assert_int_eq(result, 4);
 }
 END_TEST
->>>>>>> a_few_notes_on_data_types

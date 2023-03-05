@@ -15,6 +15,7 @@
 #include "test_streams/test_streams.h"
 #include "test_strings/test_strings.h"
 #include "test_structs/test_structs.h"
+#include "test_types/test_types.h"
 
 int
 main(void)
@@ -32,6 +33,7 @@ main(void)
 	srunner_add_suite(runner, pointers_suite());
 	srunner_add_suite(runner, memory_suite());
 	srunner_add_suite(runner, globals_suite());
+	srunner_add_suite(runner, types_suite());
 
 	srunner_run_all(runner, CK_NORMAL);
 	no_failed = srunner_ntests_failed(runner);
