@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "test_assembly/test_assembly.h"
 #include "test_bitfields/test_bitfields.h"
 #include "test_macros/test_macros.h"
 #include "test_operators/test_operators.h"
@@ -24,6 +25,7 @@ main(void)
 	srunner_add_suite(runner, bitfields_suite());
 	srunner_add_suite(runner, streams_suite());
 	srunner_add_suite(runner, macros_suite());
+	srunner_add_suite(runner, assembly_suite());
 
 	srunner_run_all(runner, CK_NORMAL);
 	no_failed = srunner_ntests_failed(runner);
